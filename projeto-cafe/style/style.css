@@ -1,0 +1,331 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap');
+
+/* Cores e fontes */
+:root {
+    color-scheme: light;
+    --creme: #F5EBDD;
+    --leite: #E8D5BC;
+    --cafe: #2B1A12;
+    --cafe-preto: #1C110B;
+    --marrom: #5A3825;
+    --caramelo: #8F5720;
+    --caramelo-claro: #D9A66F;
+    --verde-cafe: #34483A;
+    --fonte-titulo: "DM Serif Display", Georgia, serif;
+    --fonte-texto: "DM Sans", Arial, sans-serif;
+    --largura-conteudo: 68rem;
+}
+
+/* Base da página */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    min-width: 320px;
+    background-color: var(--creme);
+    color: var(--cafe);
+    font-family: var(--fonte-texto);
+    line-height: 1.7;
+}
+
+h2,
+h3 {
+    color: var(--marrom);
+    font-family: var(--fonte-titulo);
+}
+
+/* Cabeçalho */
+header {
+    padding: clamp(3.5rem, 9vw, 7rem) 1.25rem 3rem;
+    background: var(--leite);
+    text-align: center;
+}
+
+header h1 {
+    color: var(--cafe);
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2.6rem, 7vw, 5rem);
+    line-height: 1.05;
+}
+
+header p {
+    max-width: 42rem;
+    margin: 1rem auto 0;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+/* Menu */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .25rem;
+    padding: .85rem 1rem;
+    border-bottom: 1px solid var(--leite);
+    background: var(--creme);
+}
+
+nav a {
+    display: inline-block;
+    padding: .45rem .65rem;
+    color: var(--marrom);
+    font-size: .95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: var(--caramelo);
+    text-decoration: underline;
+}
+
+nav a:hover::after,
+nav a:focus-visible::after,
+main a:hover::after,
+main a:focus-visible::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 6px;
+    vertical-align: middle;
+    background-image: url("../imagens/cafe-em-grao-para-uma-pausa-para-o-cafe.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Links do conteúdo */
+main a {
+    color: var(--caramelo);
+    font-weight: 600;
+    text-underline-offset: 0.2em;
+    transition: color 0.2s ease;
+}
+
+main a:hover,
+main a:focus-visible {
+    color: var(--verde-cafe);
+}
+
+/* Espaçamento e leitura das seções */
+section {
+    max-width: var(--largura-conteudo);
+    margin-right: auto;
+    margin-left: auto;
+    padding: 4rem 1.25rem;
+}
+
+section > h2 {
+    margin-bottom: 1rem;
+}
+
+section > h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+section p {
+    max-width: 70ch;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+section ul {
+    margin-bottom: 1.25rem;
+    padding-left: 1.25rem;
+}
+
+section li {
+    margin-bottom: .35rem;
+}
+
+section li::marker {
+    color: var(--caramelo);
+}
+
+/* História e linha do tempo */
+.historia-conteudo {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.historia-conteudo img {
+    width: 44%;
+    height: 26rem;
+    object-fit: cover;
+}
+
+.historia-texto {
+    flex: 1;
+}
+
+.linha-tempo {
+    list-style: none;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--caramelo);
+}
+
+.linha-tempo strong {
+    color: var(--marrom);
+    display: inline-block;
+    min-width: 5.5rem;
+}
+
+.linha-tempo li {
+    position: relative;
+    margin-bottom: .75rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: .75rem;
+}
+
+.linha-tempo li::before {
+    content: "";
+    position: absolute;
+    left: -1.6rem;
+    top: .55rem;
+    width: .6rem;
+    height: .6rem;
+    border-radius: 50%;
+    background-color: var(--caramelo);
+}
+
+/* Grãos, espécies e métodos de processamento */
+#graos > h2:first-child {
+    margin-bottom: 1rem;
+}
+
+.graos-introducao,
+.especies-graos {
+    margin-bottom: 2rem;
+}
+
+.foto-graos {
+    display: block;
+    width: 100%;
+    height: 19rem;
+    object-fit: cover;
+    margin-bottom: 2.5rem;
+}
+
+.especies-graos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.especies-graos h3 {
+    margin-bottom: .5rem;
+}
+
+.titulo-topico-graos {
+    margin-top: 2rem;
+    margin-bottom: .75rem;
+}
+
+#graos li strong {
+    color: var(--marrom);
+}
+
+.metodos strong {
+    color: var(--marrom);
+}
+
+/* Torras */
+#torra {
+    background-image:
+        linear-gradient(rgba(28, 17, 11, 0.75), rgba(28, 17, 11, 0.75)),
+        url("../imagens/pexels-apasaric-2711959.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#torra h2,
+#torra p {
+    color: var(--creme);
+}
+
+.tipos-torra > div {
+    margin-top: 1.5rem;
+}
+
+.destaque {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-left: 4px solid var(--caramelo);
+    font-style: italic;
+}
+
+.dica-ouro {
+    margin-top: 1.5rem;
+    padding-top: .75rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--verde-cafe);
+}
+
+/* Cafés especiais e vídeo */
+.pontuacao-cafe {
+    color: var(--caramelo);
+    font-weight: 700;
+}
+
+.topico-especial {
+    margin-top: 2rem;
+}
+
+#cafe-especial video {
+    display: block;
+    width: 100%;
+    max-width: 60rem;
+    margin: 2rem auto;
+    border-radius: .15rem;
+}
+
+/* Rodapé */
+footer {
+    padding: 2rem 1rem;
+    background-color: var(--cafe-preto);
+    color: var(--creme);
+    text-align: center;
+}
+
+footer p + p {
+    font-size: .9rem;
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 600px) {
+    section {
+        padding: 3rem 1.25rem;
+    }
+
+    .historia-conteudo {
+        flex-direction: column;
+    }
+
+    .historia-conteudo img {
+        width: 100%;
+        height: 20rem;
+    }
+
+    .especies-graos {
+        grid-template-columns: 1fr;
+    }
+
+    #torra {
+        background-attachment: scroll;
+    }
+}
